@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     addOne() {
-      this.$store.state.counter++;
+      this.$store.commit('increment');
     },
   },
 };
