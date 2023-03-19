@@ -1,3 +1,3 @@
 <template>
-  <h3>{{ this.$store.state.counter }}</h3>
+  <h3>{{ this.$store.getters.finalCounter }}</h3>
 </template>
