@@ -7,6 +7,7 @@ const store = createStore({
   state() {
     return {
       counter: 0,
+      isLoggedIn: false
     }
   },
   mutations: {
@@ -15,6 +16,9 @@ const store = createStore({
     } ,
     increase(state, payload) { // payload is any extra value you might use in the mutation
       state.counter = state.counter + payload.value
+    },
+    setAuth(state, payload) {
+      state.isLoggedIn = payload.isAuth
     }
   },
   actions: { // You can use actions to run async code as that is the purpose as to why they exist
@@ -25,6 +29,12 @@ const store = createStore({
     },
     increase(context, payload) {
       context.commit('increase', payload)
+    },
+    login(context) {
+      context.commit('setAuth', {isAuth: true})
+    },
+    logout(context) {
+      context.commit('setAuth', {isAuth: false} )
     }
   },
   getters: {
@@ -40,6 +50,9 @@ const store = createStore({
         return 100
       }
       return finalCounter
+    },
+    userIsAuthenticated(state) {
+      return state.isLoggedIn
     }
   }
 })
