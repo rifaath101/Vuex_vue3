@@ -10,7 +10,7 @@ export default {
       this.$store.dispatch('login');
     },
     logout() {
-      this.$store.dispatch('logout');
+      this.$store.dispatch('logout'); // This is how you call an action from vuex, your action will be a string
     },
   },
   computed: {

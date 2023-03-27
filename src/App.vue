@@ -22,13 +22,13 @@ export default {
   },
   methods: {
     // addOne() {
-    // this.$store.commit('increase', { value: 10 });
+    // this.$store.commit('increase', { value: 10 }); - this is how you call a mutation from vuex, commit allows you to have a second argument in case you have a payload
     // this.$store.dispatch('increment');
     ...mapActions(['increment', 'increase']),
   },
   computed: {
     isAuth() {
-      return this.$store.getters.userIsAuthenticated;
+      return this.$store.getters.userIsAuthenticated; // This is how you access your getters from Vuex
     },
   },
 };
