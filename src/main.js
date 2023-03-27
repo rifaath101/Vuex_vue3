@@ -3,8 +3,8 @@ import { createStore } from 'vuex';
 
 import App from './App.vue';
 
-const counterModule = {
-  state() {
+const counterModule = { // This is how you can create a module to be merged into the store
+  state() { // The state in this module is local, as in you can't do any mutations on a state that isn't defined in this module. If you want to however, you will have to call rootState in your arguments instead. state is local, rootState is not. 
     return {
       counter: 0,
     }
@@ -46,7 +46,7 @@ const counterModule = {
 }
 
 const store = createStore({
-  modules: {
+  modules: { // You can add as many modules as you like and it will all work as if it was declared here
     numbers: counterModule 
   },
   state() { // Just data
