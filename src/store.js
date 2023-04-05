@@ -70,7 +70,7 @@ const store = createStore({
       context.commit('setAuth', {isAuth: false} )
     }
   },
-  getters: { // Getters can modify or combine data to create a new state property. These getters are read-only and do not mutate the state. To mutate the state, use mutations
+  getters: { // Getters can modify or combine data to create a new state property. These getters are read-only and do not mutate the state. To mutate the state, use mutations. Use getters to access the state, don't access the state directly.
     userIsAuthenticated(state) {
       return state.isLoggedIn
     }
